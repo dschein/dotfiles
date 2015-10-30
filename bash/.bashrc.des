@@ -1,0 +1,4 @@
+function terminfo2server {
+ #needs server name...
+ infocmp | ssh $1 'cat > "$TERM.info" && tic "$TERM.info"'
+}

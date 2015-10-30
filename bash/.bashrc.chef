@@ -1,0 +1,9 @@
+export DYN_CHEF_DATA="${HOME}/gits/dyn_chef_data"
+export SSL_CERT_FILE="${DYN_CHEF_DATA}/config/cacert.pem"
+export DRIVER_PLUGIN="vagrant"
+export PROVISIONER="chef_zero"
+export PLATFORMS="ubuntu-1404"
+export CHEF_VALIDATION_CLIENT_NAME=dschein
+export CHEF_VALIDATION_KEY_PATH=$HOME/.chef/keys/dschein.pem
+PATH=$PATH:${DYN_CHEF_DATA}/bin
+

@@ -1,0 +1,30 @@
+# https://wiki.archlinux.org/index.php/Xbindkeys
+# https://wiki.archlinux.org/index.php/Spotify
+
+
+"sh -c 'pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%'"
+XF86AudioRaiseVolume
+
+"sh -c 'pactl set-sink-mute 0 false ; pactl -- set-sink-volume 0 -5%'"
+XF86AudioLowerVolume
+
+"pactl set-sink-mute 0 toggle"
+XF86AudioMute
+
+# Play/Pause
+"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+XF86AudioPlay
+
+# Next
+"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+XF86AudioNext
+
+# Previous
+"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+XF86AudioPrev
+
+# Stop
+"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
+XF86AudioStop
+
+
