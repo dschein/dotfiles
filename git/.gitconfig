@@ -1,0 +1,39 @@
+[user]
+	name = David Schein
+	email = dschein@dyn.com
+[pack]
+	threads = 0
+[color]
+	ui = true
+[diff]
+	renamelimit = 0
+	tool = vimdiff
+	guitool = gvimdiff
+[alias]
+  all = fetch --all
+  st = status -sb
+  ci = commit -v
+  br = branch
+  co = checkout
+  df = diff
+  lg = log -p
+  logg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+  loggg = log --oneline --graph --all --decorate
+  remotes = remote -vv
+  branches = branch -vv
+  ;resetupstream = !git fetch upstream && git reset --hard upstream/master && git clean -f -d
+  ;point master to dfferent remote = git branch -u neworg/newbranch
+  watch = "!clear;inotifywait --quiet -mr -e modify,move,create,delete --format \"%f %e\" @/.git . | \
+    while read file; do \
+      clear;\
+      git status --short;\
+      git --no-pager diff --shortstat;\
+    done;"
+[core]
+  pager = less -FXRSi
+  excludesfile = /home/davids/.gitignore
+
+[push]
+	default = simple
+[difftool]
+	prompt = false
