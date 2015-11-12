@@ -4,9 +4,6 @@
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 export LANG=en_US.UTF-8
-export TERM=rxvt-unicode
-export BSPWM_SOCKET=/tmp/bspwm-socket
-export SANDFLY_DIR=/home/davids/gits/sandfly
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
