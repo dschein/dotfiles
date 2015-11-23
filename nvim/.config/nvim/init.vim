@@ -11,7 +11,6 @@ else
     nnoremap <leader>V :so ~/.vimrc
 endif
 let &rtp = &rtp . ',' . s:editor_root
-filetype off                  " required for Vundle
 
 " auto-install vim-plug
 if empty(glob(s:editor_root . '/autoload/plug.vim'))
@@ -30,6 +29,8 @@ Plug 'tpope/vim-eunuch'  " gives you :SudoWrite
 Plug 'tpope/vim-abolish'
 Plug 'vim-scripts/L9'
 Plug 'vim-scripts/FuzzyFinder'
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'junegunn/vim-easy-align'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
@@ -61,6 +62,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set mouse=a
+set statusline=%F
 if has('unnamedplus')
   set clipboard=unnamedplus
 else
@@ -74,6 +76,7 @@ autocmd Filetype html setlocal ts=4 sts=4 sw=4 omnifunc=htmlcomplete#CompleteTag
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType javascript setlocal ts=4 sts=4 sw=4
 autocmd FileType python setlocal ts=4 sts=4 sw=4
+autocmd FileType ruby setlocal ts=2 sts=2 sw=2
 autocmd FileType css setlocal ts=4 noet sw=4 omnifunc=csscomplete#CompleteCSS
 autocmd bufread *.less set ft=less
 autocmd bufread *.md set ft=markdown
@@ -95,6 +98,8 @@ let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_eruby_ruby_quiet_messages =
+    \ {"regex": "possibly useless use of a variable in void context"}
 "
 hi MatchParen cterm=underline
 
@@ -139,6 +144,11 @@ nnoremap <Leader>t :CtrlSFToggle<CR>
 
 nmap    <Leader>s :write<CR>
 
+" vim-easy-align
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)"
 " ------------------------------------------------------------------
 " Solarized Colorscheme Config
 " ------------------------------------------------------------------
