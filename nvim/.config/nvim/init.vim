@@ -62,7 +62,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set mouse=a
-set statusline=%F
+set statusline=%F%M%R
 if has('unnamedplus')
   set clipboard=unnamedplus
 else
