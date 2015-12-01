@@ -1,5 +1,5 @@
 set nocompatible
-let mapleader=" "
+let mapleader=","
 " set init.vim/vimrc depending on whether using vim or neovim
 if has('nvim')
     let s:editor_root=expand("~/.nvim")
@@ -29,6 +29,8 @@ Plug 'tpope/vim-eunuch'  " gives you :SudoWrite
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rsi'
 Plug 'vim-scripts/L9'
 Plug 'vim-scripts/FuzzyFinder'
 Plug 'junegunn/rainbow_parentheses.vim'
@@ -46,6 +48,9 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'JuliaLang/julia-vim'
 Plug 'elmcast/elm-vim'
+Plug 'rbgrouleff/bclose.vim'  " required by ranger.vim
+Plug 'francoiscabrol/ranger.vim'
+
 call plug#end()
 
 abbreviate ipy from IPython import embed; embed()
@@ -80,6 +85,7 @@ autocmd FileType ruby setlocal ts=2 sts=2 sw=2
 autocmd FileType css setlocal ts=4 noet sw=4 omnifunc=csscomplete#CompleteCSS
 autocmd bufread *.less set ft=less
 autocmd bufread *.md set ft=markdown
+autocmd FileType ctrlsf highlight ExtraWhitespace ctermbg=None
 
 let g:CtrlSpaceSymbols = {"WLoad": "L", "WSave": "S"}
 let g:CtrlSpaceLoadLastWorkspaceOnStart = 1
@@ -89,8 +95,6 @@ if executable("ag")
     let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
 endif
 
-nmap <leader>nt :NERDTree<cr>
-nmap <leader>nq :NERDTreeClose<cr>
 "
 let g:syntastic_check_on_open = 1
 "
@@ -144,11 +148,14 @@ nnoremap <Leader>t :CtrlSFToggle<CR>
 
 nmap    <Leader>s :write<CR>
 
+" c-w-| to have window take over (if using vsplits). c-w-= to restore. c-w-_ for horizontal splits
+
 " vim-easy-align
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)"
+
 " ------------------------------------------------------------------
 " Solarized Colorscheme Config
 " ------------------------------------------------------------------

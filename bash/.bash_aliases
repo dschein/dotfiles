@@ -110,3 +110,4 @@ else
 fi
 
 alias tigs='tig status'
+eval "$(hub alias -s)"
