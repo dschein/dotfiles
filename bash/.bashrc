@@ -154,6 +154,10 @@ eval `dircolors ~/.config/dircolors.ansi-universal`
 # C-W to stop term output instead of C-S (so quick save works from VIM!)
 #stty stop ^W #duh, but then you cannot switch windows in vim!
 
+# ranger helpers
+source /usr/share/doc/ranger/examples/bash_subshell_notice.sh
+source /usr/share/doc/ranger/examples/bash_automatic_cd.sh
+
 # git
 . ~/git-completion.bash
 . ~/git-prompt.sh

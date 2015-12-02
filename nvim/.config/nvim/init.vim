@@ -40,7 +40,6 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'vim-scripts/indentpython'
 Plug 'tmhedberg/SimpylFold'
 Plug 'nvie/vim-flake8'
-Plug 'szw/vim-ctrlspace'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'simnalamburt/vim-mundo'
@@ -54,7 +53,7 @@ Plug 'francoiscabrol/ranger.vim'
 call plug#end()
 
 abbreviate ipy from IPython import embed; embed()
-inoremap jj <Esc>
+inoremap jk <Esc>
 nmap Y y$
 set showtabline=0
 set hidden
@@ -85,16 +84,6 @@ autocmd FileType ruby setlocal ts=2 sts=2 sw=2
 autocmd FileType css setlocal ts=4 noet sw=4 omnifunc=csscomplete#CompleteCSS
 autocmd bufread *.less set ft=less
 autocmd bufread *.md set ft=markdown
-autocmd FileType ctrlsf highlight ExtraWhitespace ctermbg=None
-
-let g:CtrlSpaceSymbols = {"WLoad": "L", "WSave": "S"}
-let g:CtrlSpaceLoadLastWorkspaceOnStart = 1
-let g:CtrlSpaceSaveWorkspaceOnSwitch = 1
-let g:CtrlSpaceSaveWorkspaceOnExit = 1
-if executable("ag")
-    let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
-endif
-
 "
 let g:syntastic_check_on_open = 1
 "
@@ -138,6 +127,7 @@ if has('nvim')
 endif
 
 " CtrlSF
+autocmd FileType ctrlsf highlight ExtraWhitespace ctermbg=None
 nmap     <Leader>f <Plug>CtrlSFPrompt
 vmap     <Leader>f <Plug>CtrlSFVwordPath
 vmap     <Leader>F <Plug>CtrlSFVwordExec
@@ -155,6 +145,9 @@ nmap    <Leader>s :write<CR>
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)"
+
+
+map _ :call OpenRanger()<CR>
 
 " ------------------------------------------------------------------
 " Solarized Colorscheme Config
