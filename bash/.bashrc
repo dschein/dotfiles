@@ -177,3 +177,5 @@ PROMPT_COMMAND='__git_ps1 "${green}\w${reset_color} \u@\h ${VIRTUAL_ENV:+[`basen
 
 
 # vim: ai et sw=4 ts=4 sts=4:
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

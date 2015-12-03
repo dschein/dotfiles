@@ -117,7 +117,7 @@ DARKNESS*color15: #ffffff
 !!URxvt*shading: 40
 
 !! scrollback buffer lines - 65535 is max on most machines (64 is default)
-URxvt*saveLines: 12000
+!URxvt*saveLines: 12000
 
 !! Xft (X FreeType) with Bitstream, DejaVu, Liberation, or Terminus fonts:
 !!  Fedora/debian packages: libXft/libxft2
@@ -196,21 +196,9 @@ URxvt*scrollBar_right: false
 !! scrollbar style - rxvt (default), plain, next, or xterm
 !URxvt*scrollstyle: rxvt
 
-URxvt.perl-ext-common: default,matcher,url-picker,option-popup,confirm-paste,keyboard-select,clipboard
-!Options: URxvt.clipboard.autocopy: if set to true, the clipboard is
-!automatically updated whenever the PRIMARY selection changes
-!URxvt.clipboard.autocopy: true
-URxvt.keysym.M-c:   perl:clipboard:copy
-URxvt.keysym.M-v:   perl:clipboard:paste
-URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
-!URxvt.clipboard.copycmd:  xclip -i -selection clipboard
-!URxvt.clipboard.pastecmd: xclip -o -selection clipboard
-URxvt.keysym.M-Escape: perl:keyboard-select:activate
-URxvt.keysym.C-0xff0d:    perl:url-picker
-URxvt.matcher.button:   1
-URxvt.urlLauncher:      chromium
-URxvt.url-picker.order: descending
-!URxvt.url-picker.label.backgroundColor: S_yellow
-!URxvt.url-picker.label.foregroundColor:	S_base03
+URxvt.perl-ext-common: default,url-select
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.underline: true
 
 URxvt*cutchars: "`\"()'*<>[]{|}"

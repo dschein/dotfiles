@@ -27,14 +27,16 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'  " gives you :SudoWrite
 Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
-Plug 'vim-scripts/L9'
-Plug 'vim-scripts/FuzzyFinder'
+Plug 'tpope/vim-tbone'
+Plug 'vim-scripts/LargeFile'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'scrooloose/syntastic'
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-scripts/indentpython'
@@ -42,7 +44,6 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'nvie/vim-flake8'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'simnalamburt/vim-mundo'
 Plug 'dyng/ctrlsf.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'JuliaLang/julia-vim'
@@ -66,7 +67,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set mouse=a
-set statusline=%F%M%R
+set statusline=%{substitute(getcwd(),'/home/davids','~','')}\ -\ %F%M%R
 if has('unnamedplus')
   set clipboard=unnamedplus
 else
@@ -146,8 +147,30 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)"
 
+" fzf settings
+if has('nvim')
+  let $FZF_DEFAULT_OPTS .= ' --inline-info'
+endif
 
-map _ :call OpenRanger()<CR>
+nnoremap <silent> <Leader><Leader> :Files<CR>
+nnoremap <silent> <Leader>C        :Colors<CR>
+nnoremap <silent> <Leader><Enter>  :Buffers<CR>
+nnoremap <silent> <Leader>ag       :Ag <C-R><C-W><CR>
+" nnoremap <silent> q: :History:<CR>
+" nnoremap <silent> q/ :History/<CR>
+
+inoremap <expr> <c-x><c-t> fzf#complete('tmuxwords.rb --all-but-current --scroll 500 --min 5')
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
+" Ranger!
+map - :call OpenRanger()<CR>
 
 " ------------------------------------------------------------------
 " Solarized Colorscheme Config
