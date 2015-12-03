@@ -19,7 +19,7 @@ xset +fp /usr/share/fonts/local
 xset fp rehash
 xset -b
 xset m 2.5 0
-[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 # swap window (super) and alt key, make menu a super, and make capslock act like ctrl
 # setxkbmap -option altwin:swap_lalt_lwin -option caps:ctrl_modifier -option altwin:alt_super_win
 
