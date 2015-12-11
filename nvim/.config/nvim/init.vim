@@ -31,6 +31,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-tbone'
+Plug 'francoiscabrol/ranger.vim'
 Plug 'vim-scripts/LargeFile'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-easy-align'
@@ -49,8 +50,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'JuliaLang/julia-vim'
 Plug 'elmcast/elm-vim'
 Plug 'rbgrouleff/bclose.vim'  " required by ranger.vim
-Plug 'francoiscabrol/ranger.vim'
-
 call plug#end()
 
 abbreviate ipy from IPython import embed; embed()
@@ -67,7 +66,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set mouse=a
-set statusline=%{substitute(getcwd(),'/home/davids','~','')}\ -\ %F%M%R
+set statusline=%{substitute(getcwd(),'/home/davids','~','')}\ -\ %F%M%R%=%-14.(%l,%c%V%)\ %P
 if has('unnamedplus')
   set clipboard=unnamedplus
 else
@@ -76,6 +75,7 @@ endif
 set cursorline
 set hidden
 set hlsearch
+set nowrapscan
 nnoremap <leader>t :%s/\s\+$//e
 autocmd Filetype html setlocal ts=4 sts=4 sw=4 omnifunc=htmlcomplete#CompleteTags
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
@@ -127,6 +127,9 @@ if has('nvim')
     :au TermOpen * :startinsert
 endif
 
+" Ranger!
+map - :call OpenRanger()<CR>
+
 " CtrlSF
 autocmd FileType ctrlsf highlight ExtraWhitespace ctermbg=None
 nmap     <Leader>f <Plug>CtrlSFPrompt
@@ -168,9 +171,6 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 nmap <leader><tab> <plug>(fzf-maps-n)
 xmap <leader><tab> <plug>(fzf-maps-x)
 omap <leader><tab> <plug>(fzf-maps-o)
-
-" Ranger!
-map - :call OpenRanger()<CR>
 
 " ------------------------------------------------------------------
 " Solarized Colorscheme Config
