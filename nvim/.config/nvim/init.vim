@@ -132,7 +132,9 @@ map - :call OpenRanger()<CR>
 
 " CtrlSF
 autocmd FileType ctrlsf highlight ExtraWhitespace ctermbg=None
-nmap     <Leader>f <Plug>CtrlSFPrompt
+" nmap     <Leader>f <Plug>CtrlSFPrompt  ... overwritten by plugin so this
+" works
+autocmd VimEnter * nmap     <Leader>f <Plug>CtrlSFPrompt
 vmap     <Leader>f <Plug>CtrlSFVwordPath
 vmap     <Leader>F <Plug>CtrlSFVwordExec
 nmap     <Leader>n <Plug>CtrlSFCwordPath
