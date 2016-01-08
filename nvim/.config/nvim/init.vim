@@ -49,6 +49,7 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'JuliaLang/julia-vim'
 Plug 'elmcast/elm-vim'
+Plug 'airblade/vim-rooter'
 Plug 'rbgrouleff/bclose.vim'  " required by ranger.vim
 call plug#end()
 
@@ -131,6 +132,7 @@ endif
 map - :call OpenRanger()<CR>
 
 " CtrlSF
+let g:ctrlsf_position = 'top'
 autocmd FileType ctrlsf highlight ExtraWhitespace ctermbg=None
 " nmap     <Leader>f <Plug>CtrlSFPrompt  ... overwritten by plugin so this
 " works

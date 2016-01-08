@@ -151,19 +151,21 @@ bindsym $mod+Shift+Right move workspace to output right
 bindsym $mod+Shift+Left move workspace to output left
 
 assign [window_role="browser"] 3
-assign [class="^spotify$"] 9
+assign [class="^Spotify$"] 9
 assign [class="^google-chrome$"] 8
 
 bindsym $mod+Shift+g exec code
 bindsym $mod+Shift+f exec firefox -ProfileManager
+# focus on existing window named "work.log" or open and name a new term editing that file
+bindsym $mod+p exec --no-startup-id [ "$(i3-msg '[title=\"work.log\"] focus')" = '[{"success":true}]' ] || i3-msg exec "i3-sensible-terminal -title \"work.log\" -e $EDITOR ~/dyn/work.log"
+bindsym $mod+Shift+w [title="work.log"] focus
 bindsym $mod+Shift+c exec chromium --proxy-server="http=localhost:3128"
 bindsym $mod+Shift+s exec spotify
 bindsym $mod+v exec pavucontrol
 
 bindsym $mod+g [class="Gvim"] focus
 bindsym $mod+f [class="Firefox"] focus
-bindsym $mod+c [class="Chromium"] focus
-bindsym $mod+p [class="Linphone"] focus
+bindsym $mod+c [class="chromium"] focus
 bindsym $mod+i [class="URxvt" title="0:0.0 irssi"] focus
 bindsym $mod+Shift+v [class="Spotify"] focus
 
