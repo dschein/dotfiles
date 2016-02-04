@@ -27,7 +27,7 @@ alias unmountcd='sudo umount /dev/cd/cdrom-0\:0\:0\:0 && sudo eject'
 alias vpnstart='sudo openvpn --config ~davids/.openvpn/dyn.conf'
 alias vpnstart-renesys='sudo openvpn --config ~davids/.openvpn/renesys.conf'
 alias vpnstop='sudo pkill openvpn'
-alias cleardyn='sudo pdnsd-ctl empty-cache renesys.com .psm1 .mai1 dyn.com dyndns.com dynect.com && sudo pdnsd-ctl config'
+alias cleardyn='sudo pdnsd-ctl empty-cache renesys.com .psm1 .mai1 dyn.com dyndns.com dynect.com dynect.net && sudo pdnsd-ctl config'
 # sudo pdnsd-ctl server renesys retest
 alias p='pushd'
 alias o='popd'

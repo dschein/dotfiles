@@ -184,4 +184,8 @@ let g:solarized_visibility="high"    "default value is normal
 syntax enable
 set background=dark
 colorscheme solarized
+" ------------------------------------------------------------------
+" End Solarized Colorscheme Config
+" ------------------------------------------------------------------
 
+nmap <leader>date :read! date +'\%a \%d \%b \%Y'<CR>
