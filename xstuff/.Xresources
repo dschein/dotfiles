@@ -135,70 +135,27 @@ DARKNESS*color15: #ffffff
 !URxvt*font: xft:DejaVu Sans Mono:pixelsize=12:antialias=true:hinting=true
 !URxvt*boldFont: xft:DejaVu Sans Mono:bold:pixelsize=12:antialias=true:hinting=true
 
-URxvt*font:     xft:DejaVu Sans Mono:pixelsize=12,xft:Code 2000:pixelsize=10
-URxvt*boldFont: xft:DejaVu Sans Mono:pixelsize=12,xft:Code 2000:pixelsize=10
+URxvt*font:     xft:DejaVu Sans Mono:pixelsize=12
+URxvt*boldFont: xft:DejaVu Sans Mono:pixelsize=12
 
 !No bold
-URxvt.keysym.M-C-1: command:\033]710;xft:DejaVu Sans Mono:pixelsize=12,xft:Code 2000:pixelsize=10\007\033]711;xft:DejaVu Sans Mono:pixelsize=12,xft:Code 2000:pixelsize=10\007
-URxvt.keysym.M-C-2: command:\033]710;xft:DejaVu Sans Mono:pixelsize=13,xft:Code 2000:pixelsize=11\007\033]711;xft:DejaVu Sans Mono:pixelsize=13,xft:Code 2000:pixelsize=11\007
-URxvt.keysym.M-C-3: command:\033]710;xft:DejaVu Sans Mono:pixelsize=14,xft:Code 2000:pixelsize=12\007\033]711;xft:DejaVu Sans Mono:pixelsize=14,xft:Code 2000:pixelsize=12\007
-URxvt.keysym.M-C-4: command:\033]710;xft:DejaVu Sans Mono:pixelsize=15,xft:Code 2000:pixelsize=13\007\033]711;xft:DejaVu Sans Mono:pixelsize=15,xft:Code 2000:pixelsize=13\007
-URxvt.keysym.M-C-5: command:\033]710;xft:DejaVu Sans Mono:pixelsize=16,xft:Code 2000:pixelsize=14\007\033]711;xft:DejaVu Sans Mono:pixelsize=16,xft:Code 2000:pixelsize=14\007
+URxvt.keysym.M-C-0: command:\033]710;xft:DejaVu Sans Mono:pixelsize=11\007\033]711;xft:DejaVu Sans Mono:pixelsize=11\007
+URxvt.keysym.M-C-1: command:\033]710;xft:DejaVu Sans Mono:pixelsize=12\007\033]711;xft:DejaVu Sans Mono:pixelsize=12\007
+URxvt.keysym.M-C-2: command:\033]710;xft:DejaVu Sans Mono:pixelsize=14\007\033]711;xft:DejaVu Sans Mono:pixelsize=14\007
+URxvt.keysym.M-C-3: command:\033]710;xft:DejaVu Sans Mono:pixelsize=16\007\033]711;xft:DejaVu Sans Mono:pixelsize=16\007
+URxvt.keysym.M-C-4: command:\033]710;xft:DejaVu Sans Mono:pixelsize=18\007\033]711;xft:DejaVu Sans Mono:pixelsize=18\007
+URxvt.keysym.M-C-5: command:\033]710;xft:DejaVu Sans Mono:pixelsize=20\007\033]711;xft:DejaVu Sans Mono:pixelsize=20\007
+URxvt.keysym.M-C-6: command:\033]710;xft:DejaVu Sans Mono:pixelsize=22\007\033]711;xft:DejaVu Sans Mono:pixelsize=22\007
 
-!Use bold
-URxvt.keysym.M-C-7: command:\033]710;xft:DejaVu Sans Mono:pixelsize=12,xft:Code 2000:pixelsize=10\007\033]711;xft:DejaVu Sans Mono:bold:pixelsize=12,xft:Code 2000:pixelsize=10\007
+URxvt.keysym.M-C-7: command:\033]710;xft:Mono:pixelsize=12\007\033]711;xft:Mono:pixelsize=12\007
+URxvt.keysym.M-C-8: command:\033]710;xft:Mono:pixelsize=16\007\033]711;xft:Mono:pixelsize=16\007
+URxvt.keysym.M-C-9: command:\033]710;xft:Mono:pixelsize=20\007\033]711;xft:Mono:pixelsize=20\007
 
-URxvt.keysym.M-C-8: command:\033]710;xft:DejaVu Sans Mono:pixelsize=14,xft:Code 2000:pixelsize=12\007\033]711;xft:DejaVu Sans Mono:bold:pixelsize=14,xft:Code 2000:pixelsize=12\007
+URxvt.perl-ext-common: default,matcher,confirm-paste
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
 
-URxvt.keysym.M-C-9: command:\033]710;xft:DejaVu Sans Mono:pixelsize=16,xft:Code 2000:pixelsize=14\007\033]711;xft:DejaVu Sans Mono:bold:pixelsize=16,xft:Code 2000:pixelsize=14\007
-
-!test
-URxvt.keysym.M-C-0: command:\033]710;xft:DejaVu Sans Mono:pixelsize=12,xft:Code 2000:pixelsize=10:antialias=true:hinting=true\007\033]711;xft:DejaVu Sans Mono:pixelsize=12,xft:Code 2000:pixelsize=10:antialias=true:hinting=true\007
-
-! https://wiki.archlinux.org/index.php/Home_and_End_keys_not_working
-URxvt.keysym.Home: \033[7~
-URxvt.keysym.End: \033[8~
-URxvt.keysym.KP_Home: \033[7~
-URxvt.keysym.KP_End:  \033[8~
-
-!urxvt*boldColors: on
-
-!URxvt*boldFont: xft:DejaVu Sans Mono::pixelsize=12:antialias=true:hinting=true
-!!
-!! Xft: Liberation fonts
-!!  Fedora/debian packages: liberation-mono-fonts/ttf-liberation
-!!URxvt*font: xft:Liberation Mono:pixelsize=13:antialias=true:hinting=true
-!!URxvt*boldFont: xft:Liberation Mono:bold:pixelsize=13:antialias=true:hinting=true
-!!
-!! Xft: Terminus fonts
-!!  Fedora/debian packages: terminus-fonts/xfonts-terminus
-!!URxvt*font: xft:terminus:pixelsize=15
-!!URxvt*boldFont: xft:terminus:bold:pixelsize=15
-
-!! Traditional fonts - a more traditional font setup in lieu of xft
-!!URxvt*font:-*-courier-medium-r-normal-*-14-*-*-*-*-*-iso8859-1
-!!URxvt*boldFont:-*-courier-bold-r-normal-*-14-*-*-*-*-*-iso8859-1
-
-!! Replace blue folder colors with a lighter shade for clarity. To
-!!  set colored folders and files within urxvt, xterm, and aterm, add
-!!  the following line to your ~/.bashrc ($HOME/.bashrc) file under
-!!  the heading "# User specific aliases and functions":
-!!   alias ls="ls -h --color=auto"
-!URxvt*color4: RoyalBlue
-!URxvt*color12: RoyalBlue
-
-!! scrollbar - true (default) or false
-URxvt*scrollBar: false
-
-!! scrollbar position - left=false (default) or right=true
-URxvt*scrollBar_right: false
-
-!! scrollbar style - rxvt (default), plain, next, or xterm
-!URxvt*scrollstyle: rxvt
-
-URxvt.perl-ext-common: default,url-select,confirm-paste
-URxvt.keysym.M-u: perl:url-select:select_next
-URxvt.url-select.launcher: /usr/bin/xdg-open
-URxvt.url-select.underline: true
+URxvt.keysym.C-Delete: perl:matcher:last
+URxvt.keysym.M-Delete: perl:matcher:list
 
 URxvt*cutchars: "`\"()'*<>[]{|}"

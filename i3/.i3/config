@@ -196,7 +196,10 @@ for_window [window_role="task_dialog"] floating enable
 for_window [title="Preferences$"] floating enable
 
 #exec redshift-gtk -l42.340382:-72.496819 -t6000:4000
-exec wicd-client -t
 #exec ibamtray
 
 force_focus_wrapping yes
+
+#exec --no-startup-id wicd-client -t
+exec --no-startup-id gnome-settings-daemon
+exec --no-startup-id nm-applet

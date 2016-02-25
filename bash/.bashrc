@@ -58,7 +58,7 @@ PYTHONSTARTUP=~/.pythonrc.py
 export PYTHONSTARTUP
 
 export WORKON_HOME=~/venv
-source /usr/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper.sh
 _virtualenvs()
 {
     local cur="${COMP_WORDS[COMP_CWORD]}"
@@ -101,34 +101,17 @@ function act {
 }
 
 function tssh {
-    ssh ${1}.psm1.renesys.com -t "ssh_auth_shuffle && tmux -u attach ${2}"
-}
-
-function tssh2 {
-    ssh ${1}.psm1.renesys.com -t "ssh_auth_shuffle && tmux -u attach ${2} && tmux send-keys 'auth' "
+    ssh davids@${1}.psm1.renesys.com -t "ssh_auth_shuffle && tmux -u attach ${2}"
 }
 
 function irc {
-    ssh ssh.renesys.com -t 'tmux -u attach -d'
+    ssh davids@ssh.renesys.com -t 'tmux -u attach -d'
 }
 
 # Start the gpg-agent if not already running
 if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
 gpg-connect-agent /bye >/dev/null 2>&1
 fi
-
-# Set SSH to use gpg-agent
-unset SSH_AGENT_PID
-if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
-fi
-
-# Set GPG TTY
-GPG_TTY=$(tty)
-export GPG_TTY
-
-# Refresh gpg-agent tty in case user switches into an X session
-gpg-connect-agent updatestartuptty /bye >/dev/null
 
 set -o ignoreeof
 #disable ctrl-d exit from shell
@@ -165,7 +148,7 @@ function jshint-unused {
 export NODE_PATH=/usr/lib/jsctags:\$NODE_PATH
 export NODE_PATH=/usr/local/lib/jsctags/:\$NODE_PATH
 
-eval `dircolors ~/.config/dircolors.ansi-universal`
+# eval `dircolors ~/.config/dircolors.ansi-universal`
 # C-W to stop term output instead of C-S (so quick save works from VIM!)
 #stty stop ^W #duh, but then you cannot switch windows in vim!
 
@@ -174,8 +157,6 @@ source /usr/share/doc/ranger/examples/bash_subshell_notice.sh
 source /usr/share/doc/ranger/examples/bash_automatic_cd.sh
 
 # git
-. ~/git-completion.bash
-. ~/git-prompt.sh
 GIT_PS1_SHOWDIRTYSTATE=1
 #GIT_PS1_SHOWCOLORHINTS=1
 GIT_PS1_SHOWUPSTREAM="auto git"

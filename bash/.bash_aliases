@@ -27,7 +27,7 @@ alias unmountcd='sudo umount /dev/cd/cdrom-0\:0\:0\:0 && sudo eject'
 alias vpnstart='sudo openvpn --config ~davids/.openvpn/dyn.conf'
 alias vpnstart-renesys='sudo openvpn --config ~davids/.openvpn/renesys.conf'
 alias vpnstop='sudo pkill openvpn'
-alias cleardyn='sudo pdnsd-ctl empty-cache renesys.com .psm1 .mai1 dyn.com dyndns.com dynect.com && sudo pdnsd-ctl config'
+alias cleardyn='sudo pdnsd-ctl empty-cache renesys.com .psm1 .mai1 dyn.com dyndns.com dynect.net && sudo pdnsd-ctl config'
 # sudo pdnsd-ctl server renesys retest
 alias p='pushd'
 alias o='popd'
@@ -56,9 +56,11 @@ alias d4='tssh dev04'
 alias d4='tssh dev04'
 alias d6='tssh dev06'
 alias d9='tssh dev09'
+alias d10='tssh dev10'
 alias d11='tssh dev11'
 alias d13='tssh dev13'
 alias o11='tssh ops11'
+alias dw='tssh devwaiter00'
 alias prodlogs='tssh loghost'
 alias jenkins='ssh jenkins-dev-vh.psm1.renesys.com'
 alias keycode="xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'"
@@ -111,4 +113,4 @@ else
 fi
 
 alias tigs='tig status'
-eval "$(hub alias -s)"
+alias git='hub'
